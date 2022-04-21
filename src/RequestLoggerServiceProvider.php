@@ -2,6 +2,7 @@
 
 namespace AlwaysOpen\RequestLogger;
 
+use AlwaysOpen\RequestLogger\Console\Commands\MakeRequestLogTable;
 use Illuminate\Support\ServiceProvider;
 
 class RequestLoggerServiceProvider extends ServiceProvider
@@ -15,6 +16,10 @@ class RequestLoggerServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../config/request-logger.php' => config_path('request-logger.php'),
             ], 'config');
+
+            $this->commands([
+                MakeRequestLogTable::class,
+            ]);
         }
     }
 

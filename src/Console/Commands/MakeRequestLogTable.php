@@ -33,7 +33,7 @@ class MakeRequestLogTable extends Command
     {
         $object_name = $this->argument('object-name');
 
-        while(! $object_name) {
+        while (! $object_name) {
             $object_name = $this->ask('What is the name of the request object you are logging? (e.g. facebook becomes FacebookRequestLog)');
         }
 
@@ -69,7 +69,7 @@ class MakeRequestLogTable extends Command
         $stub = $this->getStubWithReplacements($config['model_stub'], [
             '{TABLE_NAME}' => $table_name,
             '{CLASS_NAME}' => $class_name,
-            '{NAMESPACE}'  => 'App\\' . str_replace('/', '\\', str_replace(app_path() . '/', '', $config['model_path'])),
+            '{NAMESPACE}' => 'App\\' . str_replace('/', '\\', str_replace(app_path() . '/', '', $config['model_path'])),
         ]);
 
         $filename = $config['model_path'] . DIRECTORY_SEPARATOR . $class_name . '.php';
@@ -85,10 +85,10 @@ class MakeRequestLogTable extends Command
         $file_slug = "create_{$table_name}_table";
 
         $stub = $this->getStubWithReplacements($config['migration_stub'], [
-            '{TABLE_NAME}'          => $table_name,
-            '{CLASS_NAME}'          => Str::studly($file_slug),
-            '{PROCESS_IDS_SETUP}'   => $this->generateMigrationProcessStamps($config),
-            '{PRECISION}'           => $this->generatePrecisionValue($config),
+            '{TABLE_NAME}' => $table_name,
+            '{CLASS_NAME}' => Str::studly($file_slug),
+            '{PROCESS_IDS_SETUP}' => $this->generateMigrationProcessStamps($config),
+            '{PRECISION}' => $this->generatePrecisionValue($config),
         ]);
 
         $filename = $config['migration_path'] . DIRECTORY_SEPARATOR . $this->generateMigrationFilename($file_slug);

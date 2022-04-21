@@ -43,8 +43,7 @@ class RequestLogTest extends Orchestra
             'GET',
             '/v1/test?test=true&log=everything',
             [],
-            "['hidden' => 'value',]"
-            ,
+            "['hidden' => 'value',]",
         );
 
         $log = RequestLogBaseModel::makeFromGuzzle(

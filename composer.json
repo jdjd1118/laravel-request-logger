@@ -49,7 +49,7 @@
         }
     },
     "scripts": {
-        "analyse": "vendor/bin/phpstan analyse",
+        "analyse": "vendor/bin/phpstan analyse src/ --level=5",
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit coverage"
     },

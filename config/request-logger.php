@@ -4,7 +4,7 @@ return [
     /*
      * This is the default suffix applied to a Model's table name.
      */
-    'table_suffix' => '_request_log',
+    'table_suffix' => '_request_logs',
 
     /*
      * This is the default suffix applied to models' class names.

@@ -13,7 +13,7 @@ class MakeRequestLogTable extends Command
      *
      * @var string
      */
-    protected $signature = 'request-log:make-table
+    protected $signature = 'request-logger:make-table
                                 {object-name? : Name of the request object to log (e.g. facebook becomes FacebookRequestLog)}
                             ';
 

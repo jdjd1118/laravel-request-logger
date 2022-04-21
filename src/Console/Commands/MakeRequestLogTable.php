@@ -61,7 +61,7 @@ class MakeRequestLogTable extends Command
 
     public function generateRequestLogTableName(string $object_name, array $config): string
     {
-        return Str::snake( $object_name) . $config['table_suffix'];
+        return Str::snake($object_name) . $config['table_suffix'];
     }
 
     public function createModel(string $class_name, string $table_name, array $config): void

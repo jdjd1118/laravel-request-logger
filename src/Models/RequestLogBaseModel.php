@@ -2,8 +2,9 @@
 
 namespace AlwaysOpen\RequestLogger\Models;
 
+use AlwaysOpen\RequestLogger\Observers\RequestLogObserver;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * AlwaysOpen\RequestLogger\Models\RequestLogBaseModel
@@ -19,8 +20,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class RequestLogBaseModel extends Model
 {
-    use SoftDeletes;
-
     protected $casts = [
         'occurred_at' => 'datetime',
         'created_at' => 'datetime',
@@ -29,11 +28,33 @@ class RequestLogBaseModel extends Model
         'response' => 'json',
     ];
 
+    protected $guarded = [
+        'created_at',
+        'updated_at',
+    ];
+
     protected $dateFormat = 'Y-m-d H:i:s.u';
 
     protected static function boot()
     {
         parent::boot();
-        parent::observe();
+        parent::observe(RequestLogObserver::class);
+    }
+
+    public static function make(array $props) : static
+    {
+        return new static($props + ['occurred_at' => now()]);
+    }
+
+    public static function makeFromGuzzle(Request $request) : static
+    {
+        $instance = new static();
+        $instance->occurred_at = now();
+        $instance->params = $request->getUri()->getQuery();
+        $instance->path = $request->getUri()->getPath();
+        $instance->http_method = $request->getMethod();
+        $instance->body = $request->getBody()->getContents();
+
+        return $instance;
     }
 }

@@ -123,6 +123,6 @@ class MakeRequestLogTable extends Command
 
     public function generatePrecisionValue(array $config): string
     {
-        return (string) Arr::get($config, 'log_timestamp_precision', 3) ?? 3;
+        return (string) (Arr::get($config, 'log_timestamp_precision', 3) ?? 3);
     }
 }

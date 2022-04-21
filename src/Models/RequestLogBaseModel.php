@@ -43,11 +43,13 @@ class RequestLogBaseModel extends Model
 
     public static function make(array $props) : static
     {
+        /** @phpstan-ignore-next-line */
         return new static($props + ['occurred_at' => now()]);
     }
 
     public static function makeFromGuzzle(Request $request) : static
     {
+        /** @phpstan-ignore-next-line */
         $instance = new static();
         $instance->occurred_at = now();
         $instance->params = $request->getUri()->getQuery();

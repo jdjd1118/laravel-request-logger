@@ -1,6 +1,6 @@
 <?php
 
-namespace AlwaysOpen\ProcessStamps;
+namespace AlwaysOpen\RequestLogger;
 
 use Illuminate\Support\ServiceProvider;
 

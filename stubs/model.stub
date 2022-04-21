@@ -2,7 +2,7 @@
 
 namespace {NAMESPACE};
 
-use AlwaysOpen\RequestLogs\Models\RequestLogBaseModel;
+use AlwaysOpen\RequestLogger\Models\RequestLogBaseModel;
 
 /**
  * {NAMESPACE}\{CLASS_NAME}

@@ -1,0 +1,22 @@
+<?php
+
+namespace {NAMESPACE};
+
+use AlwaysOpen\RequestLogs\Models\RequestLogBaseModel;
+
+/**
+ * {NAMESPACE}\{CLASS_NAME}
+ *
+ * @property string|null          $path
+ * @property string|null          $params
+ * @property string               $http_method
+ * @property int|null             $response_code
+ * @property array|string|null    $body
+ * @property array|string|null    $response
+ * @property string|null          $exception
+ * @property \Carbon\Carbon|null  $occurred_at
+ */
+class {CLASS_NAME} extends RequestLogBaseModel
+{
+    protected $table = '{TABLE_NAME}';
+}

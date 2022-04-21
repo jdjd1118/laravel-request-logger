@@ -1,0 +1,72 @@
+{
+    "name": "always-open/laravel-request-logger",
+    "description": "Micro-package to ease the effort to log HTTP requests made from your application",
+    "keywords": [
+        "always-open",
+        "always open",
+        "request logger",
+        "laravel",
+        "http request"
+    ],
+    "homepage": "https://github.com/always-open/laravel-request-logger",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Quentin Schmick",
+            "email": "qschmick@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Always Open",
+            "homepage": "https://github.com/always-open",
+            "role": "Organization"
+        }
+    ],
+    "require": {
+        "php": "^8.0|^8.1",
+        "laravel/framework": "^8.0|^9.0"
+    },
+    "require-dev": {
+        "doctrine/dbal": "^2.9|^3.0",
+        "friendsofphp/php-cs-fixer": "^3.1",
+        "laravel/tinker": "^2.7",
+        "nunomaduro/larastan": "^1.0",
+        "orchestra/testbench": "^6.22",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlwaysOpen\\RequestLogger\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AlwaysOpen\\RequestLogger\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AlwaysOpen\\RequestLogger\\RequestLoggerServiceProvider"
+            ],
+            "aliases": {
+                "RequestLogger": "AlwaysOpen\\RequestLogger\\Facades\\RequestLogger"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

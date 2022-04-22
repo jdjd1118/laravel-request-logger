@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/always-open/laravel-request-logger.svg?style=flat-square)](https://packagist.org/packages/always-open/laravel-request-logger)
 [![Build Status](https://img.shields.io/github/workflow/status/always-open/laravel-request-logger/run-tests/main)](https://github.com/always-open/laravel-request-logger/actions?query=workflow%3Arun-tests)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/always-open/laravel-request-logger/PHPStan/main?label=PHPStan)](https://github.com/always-open/laravel-request-logger/actions?query=workflow%3APHPStan)
 
 [![Total Downloads](https://img.shields.io/packagist/dt/always-open/laravel-request-logger.svg?style=flat-square)](https://packagist.org/packages/always-open/laravel-request-logger)
 [![Maintainability](https://api.codeclimate.com/v1/badges/50523859ead2baf5d6af/maintainability)](https://codeclimate.com/github/always-open/laravel-request-logger/maintainability)
